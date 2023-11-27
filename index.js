@@ -49,7 +49,3 @@ app.use("/api/like", likeRoutes);
 app.use("/api/autenticacao", autenticacaoRoutes);
 app.use("/api/relacionamento", relacionamentoRoutes);
 app.use("/api/getAllUsers", getAllUsersRoutes);
-
-app.listen(8800, () => {
-  console.log('API WORKING! 🚀');
-});
