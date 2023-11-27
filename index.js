@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(
   cors({
     //origin: `http://192.168.15.149:3000`,
-    origin: `https://coral-app-xcxp2.ondigitalocean.app/`,
+    origin: `https://coral-app-xcxp2.ondigitalocean.app`,
   })
 );
 app.use(cookieParser());
