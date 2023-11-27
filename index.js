@@ -24,8 +24,7 @@ app.use((req,res,next) => {
 app.use(express.json());
 app.use(
   cors({
-    //origin: `http://192.168.15.149:3000`,
-    origin: `https://seahorse-app-64ieu.ondigitalocean.app`,
+    origin: "https://socialblock-jztix.ondigitalocean.app/",
     credentials: true,
   })
 );
