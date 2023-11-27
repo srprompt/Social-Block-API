@@ -24,7 +24,7 @@ app.use((req,res,next) => {
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://socialblock-jztix.ondigitalocean.app/",
+    origin: "https://socialblock-jztix.ondigitalocean.app",
     credentials: true,
   })
 );
