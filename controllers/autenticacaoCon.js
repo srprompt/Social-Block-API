@@ -49,10 +49,11 @@ export const login = (req, res) => {
 
         const { senha, ...others } = data[0];
 
-        res
-            .cookie("accessToken", token, {
-                httpOnly: true,
-        })
+        res.cookie("accessToken", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "none", // ou ajuste conforme necessário
+          })
         .status(200)
         .json(others);
     });
