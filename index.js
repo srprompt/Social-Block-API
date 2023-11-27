@@ -13,6 +13,8 @@ import cors from 'cors';
 import multer from 'multer';
 import cookieParser from 'cookie-parser';
 
+const PORT = process.env.PORT || 8800;
+
 //middlewares
 app.use((req,res,next) => {
   res.header("Access-Control-Allow-Credentials", true)
@@ -21,7 +23,8 @@ app.use((req,res,next) => {
 app.use(express.json());
 app.use(
   cors({
-    origin: `https://seahorse-app-64ieu.ondigitalocean.app/`,
+    origin: `https://seahorse-app-64ieu.ondigitalocean.app`,
+    credentials: true,
   })
 );
 app.use(cookieParser());
@@ -49,3 +52,7 @@ app.use("/api/like", likeRoutes);
 app.use("/api/autenticacao", autenticacaoRoutes);
 app.use("/api/relacionamento", relacionamentoRoutes);
 app.use("/api/getAllUsers", getAllUsersRoutes);
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is running on port ${PORT}`);
+});
