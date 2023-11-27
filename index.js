@@ -20,11 +20,13 @@ app.use((req,res,next) => {
   res.header("Access-Control-Allow-Credentials", true)
   next()
 });
+
 app.use(express.json());
 app.use(
   cors({
     //origin: `http://192.168.15.149:3000`,
     origin: `https://seahorse-app-64ieu.ondigitalocean.app`,
+    credentials: true,
   })
 );
 app.use(cookieParser());
