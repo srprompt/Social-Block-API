@@ -13,7 +13,7 @@ import cors from 'cors';
 import multer from 'multer';
 import cookieParser from 'cookie-parser';
 
-const PORT = process.env.PORT || 8800;
+const PORT = process.env.PORT || 8080;
 
 //middlewares
 app.use((req,res,next) => {
@@ -23,8 +23,8 @@ app.use((req,res,next) => {
 app.use(express.json());
 app.use(
   cors({
-    origin: `https://seahorse-app-64ieu.ondigitalocean.app`,
-    credentials: true,
+    //origin: `http://192.168.15.149:3000`,
+    origin: `https://coral-app-xcxp2.ondigitalocean.app/`,
   })
 );
 app.use(cookieParser());
